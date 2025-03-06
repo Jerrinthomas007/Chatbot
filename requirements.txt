@@ -1,0 +1,6 @@
+langchain-core 
+langgraph>0.2.27
+langchain[openai]
+flask 
+langchain-openai
+python-dotenv
