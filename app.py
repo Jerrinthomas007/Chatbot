@@ -5,6 +5,9 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_core.messages import trim_messages
+from typing import Sequence, Annotated, TypedDict
+from langchain_core.messages import BaseMessage
+from langgraph.graph.message import add_messages
 from dotenv import load_dotenv
 import os
 
@@ -17,10 +20,7 @@ os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 # Initialize the chat model
 model = ChatOpenAI(model="gpt-3.5-turbo")
 
-# Define the state schema
-from typing import Sequence, Annotated, TypedDict
-from langchain_core.messages import BaseMessage
-from langgraph.graph.message import add_messages
+
 
 class State(TypedDict):
     messages: Annotated[Sequence[BaseMessage], add_messages]
