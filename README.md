@@ -15,7 +15,7 @@ Follow these steps to set up the chatbot:
 
 1. Clone the repository:
    ```sh
-   git clone <repo-url>
+   git clone https://github.com/Jerrinthomas007/Chatbot.git
    ```
 2. Navigate to the project directory:
    ```sh
